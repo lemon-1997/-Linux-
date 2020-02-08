@@ -25,7 +25,7 @@
 * 1.凡是非共享对象都是彼此独立的，如果一个对象始终只被一个线程用到，那么该线程是安全的。
 * 2.如果是共享对象，只读不写是安全的，一旦有写，读必须加锁。
 * 3.在posix线程api中，通过pthread_self(void) 函数获取当前线程的id 定义为<br>
-extern pthread_t pthread_self (void) __THROW __attribute__ ((__const__));<br>
+extern pthread_t pthread_self (void) __ THROW __ attribute__ ((__ const__));<br>
 返回值是pthread_t 定义为 typedef unsigned long int pthread_t;//声明为无符号长整型<br>
 pthread_t不一定是一个数值类型（整数或指针），也有可能是一个结构体，可通过pthread_equal函数判断是否相等。
 * 4.pthread_t并不适合做函数的标识符，可使用gettid返回pid_t来区分。
